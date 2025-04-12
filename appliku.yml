@@ -20,3 +20,6 @@ databases:
 
 volumes:
   - container_path: /db
+  - container_path: /media
+    environment_variable: MEDIA
+    url: /media/
