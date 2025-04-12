@@ -4,20 +4,19 @@ build_settings:
   environment_variables:
     - name: APPLIKU
       value: 'true'
+    - name: DATABASE_URL
+      value: 'sqlite:////db/db.sqlite3'
 
 services:
   - name: web
     command: bash web.sh
 
-  - name: worker
-    command: bash celery-worker.sh
-
-  - name: beat
-    command: bash celery-beat.sh
 
   - name: release
     command: bash release.sh
 
 databases:
-  - type: postgresql_17
   - type: redis_7
+
+volumes:
+  - container_path: /db
