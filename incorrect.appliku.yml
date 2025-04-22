@@ -1,0 +1,25 @@
+build_settings:
+  build_image: python-3.13-node-20.18
+  build_command: npm i && npm run tailwind:build
+  environment_variables:
+    - name: APPLIKU
+      value: 'true'
+    - name: DATABASE_URL
+      value: 'sqlite:////db/db.sqlite3'
+
+services:
+  - name: web
+    command: bash web.sh
+
+
+  - name: release
+    command: bash release.sh
+
+databases:
+  - type: redis_19
+
+volumes:
+  - container_path: /db
+  - container_path: /media
+    environment_variable: MEDIA
+    url: /media/
