@@ -1,5 +1,5 @@
 build_settings:
-  build_image: python-3.13-node-20.18
+  build_image2: python-3.13-node-20.18
   build_command: npm i && npm run tailwind:build
   environment_variables:
     - name: APPLIKU
@@ -8,7 +8,7 @@ build_settings:
       value: 'sqlite:////db/db.sqlite3'
 
 services:
-  - name: web
+  - name1: web
     command: bash web.sh
 
 
