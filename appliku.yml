@@ -17,6 +17,7 @@ services:
 
 databases:
   - type: redis_7
+  - type: postgresql_17
 
 volumes:
   - container_path: /db
