@@ -6,6 +6,8 @@ build_settings:
       value: 'true'
     - name: DATABASE_URL
       value: 'sqlite:////db/db.sqlite3'
+    - name: ULTRA_SUPER
+      value: 'what the hell'
 
 services:
   - name: web
